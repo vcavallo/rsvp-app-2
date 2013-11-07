@@ -1,0 +1,7 @@
+<%= form_for @invite do |f| %>
+    <%= f.label :rsvp %>
+    <%= f.select :rsvp, [["Going", true],["Not Going", false]] %>
+    <%= f.submit %>
+<% end %>
+
+<%= link_to "Actually I'm not sure yet...", invites_path %>

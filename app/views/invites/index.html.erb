@@ -1,0 +1,11 @@
+<h1>Invites</h1>
+
+<ul>
+  <% Invite.all.each do |invite| %>
+  <li><%= User.find(invite.user_id).name %> has been invited to <%= link_to Event.find(invite.event_id).name, event_path(invite.event_id) %>
+    <ul>
+      <li><%= link_to "Going?", edit_invite_path(invite) %> (Currently: <%= invite.status %>)</li>
+    </ul>
+  </li>
+  <% end %>
+</ul>

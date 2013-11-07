@@ -1,3 +1,11 @@
 <h1><%= @event.name %></h1>
+<h2>Invites:</h2>
+
+<ol>
+  <% @event.users.all.each do |attendee| %>
+    <li><%= attendee.name %></li>
+  <% end %>
+</ol>  
+
 
 <a href="/events/<%= @event.id %>/invites/new">New Invite</a>
