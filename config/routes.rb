@@ -5,6 +5,8 @@ RsvpApp2::Application.routes.draw do
 
   resources :events
 
+  root :to => 'events#index'
+
   get '/events/:event_id/invites/new' => 'events#new_invite'
 
   # The priority is based upon order of creation: first created -> highest priority.
