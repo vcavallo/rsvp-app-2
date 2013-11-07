@@ -9,10 +9,10 @@ class InvitesController < ApplicationController
 
     respond_to do |format|
       if  @invite.is_unique? && @invite.save
-        format.html { redirect_to events_path, notice: 'invite was successfully created.' }
+        format.html { redirect_to event_path(@invite.event_id), notice: 'invite was successfully created.' }
         format.json { render action: 'show', status: :created, location: @invite }
       else
-        format.html { redirect_to events_path }
+        format.html { redirect_to event_path(@invite.event_id) }
         format.json { render json: @invite.errors, status: :unprocessable_entity }
       end
     end

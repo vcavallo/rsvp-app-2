@@ -1,4 +1,12 @@
 <h1><%= @user.name %></h1>
+
+<h2>Invites:</h2>
+<ol>
+  <% @user.invites.all.each do |invite| %>
+    <li><%= link_to Event.find(invite.event_id).name, event_path(invite.event_id) %> - <%= @user.name %> is <%= invite.status %></li>
+  <% end %>
+</ol>
+
 <br>
 <%= link_to 'Edit', edit_user_path(@user) %> | 
 <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>

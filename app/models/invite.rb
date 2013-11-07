@@ -4,11 +4,11 @@ class Invite < ActiveRecord::Base
 
   def status
     if self.rsvp == false
-      return "Not Going"
+      return "not going"
     elsif self.rsvp == true
-      return "Going!"
+      return "going!"
     else
-      return "No Response"
+      return "yet to respond"
     end
   end
 
