@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # TODO - user before_action
 
   def index
     @users = User.all
@@ -24,6 +25,22 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(:name => params[:user][:name])
+    redirect_to users_path
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path
   end
 
 end

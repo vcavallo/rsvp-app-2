@@ -30,5 +30,21 @@ class EventsController < ApplicationController
     @invite = Invite.new
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(:name => params[:event][:name])
+    redirect_to events_path
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to users_path
+  end
+
 end
 

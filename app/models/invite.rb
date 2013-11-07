@@ -14,7 +14,7 @@ class Invite < ActiveRecord::Base
 
   # no good
   def is_unique?
-    true unless Invite.all.include?()
+    true unless Invite.all.include?(self)
   end
 
 end

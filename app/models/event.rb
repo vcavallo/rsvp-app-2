@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :invites
+  has_many :invites, dependent: :destroy
   has_many :users, :through => :invites
 
   # def event_guests(event_id)

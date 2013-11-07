@@ -5,7 +5,7 @@ RsvpApp2::Application.routes.draw do
 
   resources :events
 
-  root :to => 'events#index'
+  root 'events#index'
 
   get '/events/:event_id/invites/new' => 'events#new_invite'
 

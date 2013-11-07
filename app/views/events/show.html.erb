@@ -10,4 +10,9 @@
 
 <a href="/events/<%= @event.id %>/invites/new">New Invite</a>
 
+<br>
+<br>
+<%= link_to 'Edit', edit_event_path(@event) %> | 
+<%= link_to 'Destroy', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <%= render 'footer' %>
